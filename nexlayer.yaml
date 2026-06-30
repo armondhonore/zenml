@@ -8,8 +8,6 @@ application:
     - 8080
     vars:
       ZENML_SERVER_DEPLOYMENT_TYPE: local
-      DATABASE_URL: "sqlite:////zenml/.zen/config.db"
-    volumes:
-    - name: zenml-data
-      mountPath: /zenml
-      size: 5Gi
+      ZENML_CONFIG_PATH: /tmp/zenml
+      ZENML_DEFAULT_STORE_TYPE: sql
+      ZENML_STORE_URL: "sqlite:////tmp/zenml/store.db"
