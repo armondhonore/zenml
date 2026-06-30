@@ -2,7 +2,7 @@ application:
   name: zenml
   pods:
   - name: app
-    image: zenmldocker/zenml-server:latest
+    image: mirror.gcr.io/zenmldocker/zenml-server:latest
     path: /
     servicePorts:
     - 8080
