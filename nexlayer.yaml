@@ -1,15 +1,24 @@
 application:
   name: zenml
   pods:
-  - name: app
-    image: mirror.gcr.io/zenmldocker/zenml-server:latest
-    path: /
-    servicePorts:
-    - 8080
-    vars:
-      ZENML_SERVER_DEPLOYMENT_TYPE: local
-      DATABASE_URL: "sqlite:////zenml/.zen/config.db"
-    volumes:
-    - name: zenml-data
-      mountPath: /zenml
-      size: 5Gi
+    - name: app
+      image: "registry.nexlayer.io/user_01kece1xyh817dwff7wnarhkxd/zenml:9f1af57-fix2"
+      path: /
+      servicePorts:
+        - 8000
+      vars:
+        PYTHONUNBUFFERED: "1"
+        PORT: "8000"
+        ZENML_DATABASE_URL: "postgresql://zenml:${POSTGRES_PASSWORD}@postgres.pod:5432/zenml"
+    - name: postgres
+      image: mirror.gcr.io/library/postgres:16-alpine
+      servicePorts:
+        - 5432
+      vars:
+        POSTGRES_USER: zenml
+        POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+        POSTGRES_DB: zenml
+      volumes:
+        - name: zenml-postgres-data
+          size: 10Gi
+          mountPath: /var/lib/postgresql
