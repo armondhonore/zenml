@@ -92,7 +92,7 @@ application:
   name: zenml
   pods:
     - name: app
-      image: "registry.nexlayer.io/user_01kece1xyh817dwff7wnarhkxd/zenml:9f1af57-fix2"
+      image: "registry.nexlayer.io/user_01kece1xyh817dwff7wnarhkxd/zenml:9f1af57-fix3"
       path: /
       servicePorts:
         - 8000
@@ -113,7 +113,6 @@ application:
           size: 10Gi
           mountPath: /var/lib/postgresql
 ```
-
 <!-- nexlayer:end -->
 
 ## Nexlayer Deployment Plan
@@ -140,7 +139,7 @@ application:
 
 ## Nexlayer Configuration
 <!-- nexlayer:section agent-managed=nexlayer_config -->
-**Last deployed:** 2026-07-01T00:05:10Z  
+**Last deployed:** 2026-07-01T00:11:24Z  
 **Live URL:** https://relaxed-weasel-zenml.cloud.nexlayer.ai  
 **Runtime:**  · **Port:** auto-detected  
 **Deploy branch:** nexlayer  
@@ -150,7 +149,7 @@ application:
   name: zenml
   pods:
     - name: app
-      image: "registry.nexlayer.io/user_01kece1xyh817dwff7wnarhkxd/zenml:9f1af57-fix2"
+      image: "registry.nexlayer.io/user_01kece1xyh817dwff7wnarhkxd/zenml:9f1af57-fix3"
       path: /
       servicePorts:
         - 8000
@@ -178,5 +177,6 @@ application:
 | Date | Status | Notes |
 |------|--------|-------|
 | 2026-06-30T23:55:47Z | analyzed | initial repo analysis |
-| 2026-07-01T00:05:10Z | success | deployed https://relaxed-weasel-zenml.cloud.nexlayer.ai |
+| 2026-07-01T00:11:24Z | success | deployed https://relaxed-weasel-zenml.cloud.nexlayer.ai |
 <!-- nexlayer:end -->
+

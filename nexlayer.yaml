@@ -2,7 +2,7 @@ application:
   name: zenml
   pods:
     - name: app
-      image: "registry.nexlayer.io/user_01kece1xyh817dwff7wnarhkxd/zenml:9f1af57-fix2"
+      image: "registry.nexlayer.io/user_01kece1xyh817dwff7wnarhkxd/zenml:9f1af57-fix3"
       path: /
       servicePorts:
         - 8000
